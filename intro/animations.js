@@ -55,13 +55,18 @@ function setup() {
     rectangle_test.background(102, 0, 102);
     rectangle_test = rectangle_test.get();
     myPTag = createP("Alpine Smuggling");
+    start = createP("scroll to begin");
+    start.style("font-size","40px");
+    start.style("font-family","Satisfy");
     myPTag.style("font-size","100px");
     myPTag.style("font-family","Satisfy");
-    myPTag.position(window.screen.width/1.7,window.screen.height/11);
+    myPTag.position(window.screen.width/1.8,window.screen.height/11-100);
+    start.position(window.screen.width/1.8,(window.screen.height/11)+100);
 
 }
-function moveText(text){
-    text.position(window.screen.width/1.7,window.screen.height/11-scrollPos)
+function moveText(text1,text2){
+    text1.position(window.screen.width/1.7,(window.screen.height/11-100)-scrollPos);
+    text2.position(window.screen.width/1.7,((window.screen.height/11)+100)-scrollPos);
 }
 function draw(){
     noTint();
@@ -197,7 +202,7 @@ function mouseWheel(event) {
         changeTint(scrollPos, event.delta);
         
     }
-    moveText(myPTag);
+    moveText(myPTag,start);
     return false;
 
 }

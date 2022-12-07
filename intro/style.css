@@ -43,7 +43,8 @@ body, html {
   overflow: hidden;
 }
 canvas{
-    position: absolute,
+    position: absolute;
+    z-index: -1;
 }
 @font-face {
   font-family: Title-Font;
@@ -64,5 +65,7 @@ canvas{
     height: 100%;
 }
 .button{
-  position: absolute;
+  position: fixed;
+  z-index: 1;
+
 }
