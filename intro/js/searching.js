@@ -1,3 +1,4 @@
+//decalring varibales
 let img;
 let img2;
 let img3;
@@ -8,19 +9,11 @@ let pageList = [];
 var introDone = false;
 var smuggler2 = false;
 var smuggler3 = false;
+
+//retiecing storage 
 getStorage();
 pageList.push("page3");
 setStorage();
-$(document).ready(function() {
-    $("#menu").hover(
-      function(){
-        $("#menu").stop().animate({left: "0px", height: "300px", width: "400px"}, 500 );
-      },
-      function(){
-        $("#menu").stop().animate({left: "-150px", height: "70px", width: "250px"}, 500 );
-      }
-    );
-});
 function setStorage(){
     const pagesArray = Array.from(pageList);
     const pageString = JSON.stringify(pagesArray);
@@ -34,8 +27,21 @@ function getStorage(){
             pageList.push(page);
         }
     }   
-    console.log("added page"+ pageList);
+
 }
+//animation map for menu 
+$(document).ready(function() {
+    $("#menu").hover(
+      function(){
+        $("#menu").stop().animate({left: "0px", height: "300px", width: "400px"}, 500 );
+      },
+      function(){
+        $("#menu").stop().animate({left: "-150px", height: "70px", width: "250px"}, 500 );
+      }
+    );
+});
+
+//preloading function and features and images
 function preload() {
 	img = loadImage('../resources/page3/BackgroundPlaceHolder.png');
     light = loadImage("../resources/page3/FlashyLight.png");
@@ -74,14 +80,10 @@ else if(window.screen.width < 1200)
              o.container.style.opacity = 0;
            }
         });
-        // vara.get("page2").container.style.cursor = "pointer";
-        // vara.get("page2").container.onclick = function() {
-        //   document.querySelector("#page2").click();
-        // };
       });
-    console.log("making text");
 }
 
+//function for first found object dialogue
 function firstSmuggler(){
     introDone = true;
     var fontSize = 72;
@@ -116,13 +118,10 @@ else if(window.screen.width < 1200)
              console.log("container inside" + o.container.innerText);
            }
         });
-        // vara.get("page2").container.style.cursor = "pointer";
-        // vara.get("page2").container.onclick = function() {
-        //   document.querySelector("#page2").click();
-        // };
       });
-    console.log("making text");
 }
+
+//function for second found object and dialogue
 function secondSmuggler(){
     smuggler2 = true;
     var fontSize = 30;
@@ -157,13 +156,10 @@ else if(window.screen.width < 1200)
              console.log("container inside" + o.container.innerText);
            }
         });
-        // vara.get("page2").container.style.cursor = "pointer";
-        // vara.get("page2").container.onclick = function() {
-        //   document.querySelector("#page2").click();
-        // };
       });
-    console.log("making text");
 }
+
+//function for third found element and dialogue
 function thirdSmuggler(){
     smuggler3 = true;
     var fontSize = 30;
@@ -193,13 +189,6 @@ else if(window.screen.width < 1200)
 
     vara.ready(function() {
         var erase = true;
-        // vara.animationEnd(function(i, o) {
-        //   if (i == "no_erase") erase = false;
-        //   if (erase) {
-        //     o.container.style.transition = "opacity 1s 1s";
-        //     o.container.style.opacity = 0;
-        //   }
-        // });
         vara.get("page2").container.style.cursor = "pointer";
         vara.get("page2").container.onclick = function() {
           document.querySelector("#page2").click();
@@ -208,18 +197,21 @@ else if(window.screen.width < 1200)
     console.log("making text");
 }
 
+//addjusting image sizes
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
     myPTag.position(windowWidth/1.8,windowHeight/11-100);
     start.position(windowWidth/1.8,(windowHeight/11)+100);
-  }
+}
+
+//initilaize features and images
 function setup() {
     let canvas = createCanvas(windowWidth, windowHeight)
     image(img,0,0,window.screen.width,window.screen.height);
     makeNextText();
-    //imgage(img,0,0);
-
 }
+
+//track mouse movements
 function mouseMoved(){
     console.log(mouseX + " " + mouseY)
     if( !introDone){
@@ -244,6 +236,8 @@ function mouseMoved(){
         }
     }
 }
+
+// frame based animations
 function draw() {
     image(img2,0,0,window.screen.width,window.screen.height);
     //console.log("nothere");
@@ -256,11 +250,12 @@ function draw() {
     }
     image(light, mouseX - window.screen.width, mouseY - window.screen.height,(window.screen.width*2),(window.screen.height*2));
 }
+
+//mosuse sroll tracker
 function mouseWheel(event) {
     console.log("scroll" + scrollPos);
 
     scrollPos += event.delta;
-    //console.log(scrollPos);
     if (scrollPos >= 3500) {
         lightsOn = true;
         tintVal = -150;
@@ -271,14 +266,7 @@ function mouseWheel(event) {
     else if (scrollPos <= 0) {
       scrollPos = 0;
 
-      //makeNextText();
     }
-    else{
-        print("changeTint");
-        //changeTint(scrollPos, event.delta);
-        
-    }
-   // moveText(myPTag);
     return false;
 
 }

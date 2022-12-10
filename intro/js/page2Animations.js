@@ -1,13 +1,30 @@
+//declaring variables
 let mountain2;
 let sky;
 let dark;
 let pageList = [];
 
-
 let menu;
+
+//retireving storage infp
 getStorage();
 pageList.push("page2");
 setStorage();
+function setStorage(){
+    const pagesArray = Array.from(pageList);
+    const pageString = JSON.stringify(pagesArray);
+    localStorage.setItem('pages', pageString);
+}
+function getStorage(){
+    const pagesArrayString = localStorage.getItem('pages');
+    const pagesArray = JSON.parse(pagesArrayString);
+    if(pagesArray != null){
+        for (let page of pagesArray) {
+            pageList.push(page);
+        }
+    }   
+}
+//animations for character title cards
 $(document).ready(function() {
     $("#menu").hover(
       function(){
@@ -80,28 +97,15 @@ $(document).ready(function() {
         }
     );
 });
-function setStorage(){
-    const pagesArray = Array.from(pageList);
-    const pageString = JSON.stringify(pagesArray);
-    localStorage.setItem('pages', pageString);
-}
-function getStorage(){
-    const pagesArrayString = localStorage.getItem('pages');
-    const pagesArray = JSON.parse(pagesArrayString);
-    if(pagesArray != null){
-        for (let page of pagesArray) {
-            pageList.push(page);
-        }
-    }   
-    console.log("added page"+ pageList);
-}
-console.log(pageList);
 
+//preload images and features
 function preload(){
     mountain2 = loadImage("../resources/page2/mountain2.png");
     sky = loadImage("../resources/Sky.png");
     dark = loadImage("../resources/IMG_0881.PNG");
 }
+
+//deploy canvas and setup
 function setup(){
     
     let canvas = createCanvas(windowWidth, mountain2.height);
@@ -116,7 +120,7 @@ function setup(){
     continuediv.style("color","#8d9e09");
     makeNextText();
 }
-
+//function for making the scorlling text
 function makeNextText(){
     var fontSize = 72;
 if(window.screen.width < 700) 
@@ -162,29 +166,6 @@ else if(window.screen.width < 1200)
              o.container.style.opacity = 0;
            }
         });
-        // vara.get("page2").container.style.cursor = "pointer";
-        // vara.get("page2").container.onclick = function() {
-        //   document.querySelector("#page2").click();
-        // };
+  
       });
-    console.log("making text");
-}
-
-function changeColor() {
-    divelem.style(
-        "background-color: lightgreen"
-    );
-  
-    divelem.html(
-        "The mouse has been moved over the element!"
-    );
-}
-function changeColorBack() {
-    divelem.style(
-        "background-color: blue"
-    );
-  
-    divelem.html(
-        "The mouse has been moved over the element!"
-    );
 }
