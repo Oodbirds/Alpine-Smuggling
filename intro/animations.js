@@ -168,9 +168,9 @@ else if(window.screen.width < 1200)
   fontSize= 40;
     nextText = true;
     var vara = new Vara("#narration","https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",[{
-        text:"As the sun sets over the Alpine ridge seperating switzerland and france. A single guard keeps watch; for it is on moonless-cloudy nights like these that smugglers will use this path to try and sneak across the border.",
+        text:"As the sun sets over the Alpine ridge seperating Switzerland and France, a single guard keeps watch. For it is on moonles, cloudy nights like these that smugglers will use this path to sneak across the border.",
         y: windowHeight/10,
-        duration: 30000,
+        duration: 40000,
         }, 
         {
             text: "continue...",

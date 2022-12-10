@@ -52,7 +52,7 @@ else if(window.screen.width < 1200)
   fontSize= 56;
     nextText = true;
     var vara = new Vara("#narration","https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",[{
-        text:"Though most smugglers were familiar with the mountains, crossing them in complete darkness remained very dangerous, partcularly since they could not walk on any established paths, for fear of getting caught by border police patrolling the area.",
+        text:"Though most smugglers were familiar with the mountains, crossing them in complete darkness remained very dangerous. They could not walk on any established paths, for fear of getting caught by border police patrolling the area.",
         y: windowHeight/10,
         
         duration: 25000,
@@ -132,7 +132,7 @@ else if(window.screen.width < 1200)
   fontSize= 30;
     nextText = true;
     var vara = new Vara("#secondSmuggler","https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",[{
-        text:"Additionally, most smuggling happened in the early spring or late winter months, when snow made the journey much harsher.",
+        text:"Additionally, most smuggling happened in the early Spring or late Winter months, when snow made the journey much harsher.",
         y: windowHeight/10,
         duration: 15000,
         }, 

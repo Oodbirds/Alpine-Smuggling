@@ -37,7 +37,7 @@ for (i = 0; i < headers.length; i++){
             console.log("found");
             link[0].style.color = "black";
         }else{
-            link[0].style.color = "#8f9691";
+            link[0].style.color = "#828282";
         }
     }
     else if(headers[i].innerText == "Chapter 1: The Smugglers"){
@@ -45,7 +45,7 @@ for (i = 0; i < headers.length; i++){
             console.log("found");
             link[0].style.color = "black";
         }else{
-            link[0].style.color = "#8f9691";
+            link[0].style.color = "#828282";
         }
     }
     else if(headers[i].innerText == "Chapter 2: Searching in the Dark"){
@@ -53,7 +53,7 @@ for (i = 0; i < headers.length; i++){
             console.log("found");
             link[0].style.color = "black";
         }else{
-            link[0].style.color = "#8f9691";
+            link[0].style.color = "#828282";
         }
     }
     else if(headers[i].innerText == "Chapter 3: The Sun Rise"){

@@ -125,20 +125,20 @@ else if(window.screen.width < 1200)
   fontSize= 56;
     nextText = true;
     var vara = new Vara("#characterIntro","https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",[{
-        text:"Before open borders were established in Europe, smuggling was a quick way for people familiar with the mountains to make some money.",
+        text:"Before open borders were established in Europe in 1985, smuggling was a quick way for people familiar with the mountains to make some money.",
         y: 150,
         fromCurrentPosition: { y: false },
         duration: 10000,
         },
         {
-            text:"Smugglers would typically trade untaxed Swiss goods, such as cigarettes, for food or other valubles.",
+            text:"Smugglers would typically trade untaxed Swiss goods, such as cigarettes, for food and other valubles.",
             y: 150,
             duration: 5000,
             fromCurrentPosition: { y: false },
             delay: 5000
         },
         {
-            text:"Learn more about the smugglers below.",
+            text:"Scroll to learn more about the smugglers",
             y: 150,
             duration: 5000,
             id: "no_erase",
