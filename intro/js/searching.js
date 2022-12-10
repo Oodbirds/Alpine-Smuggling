@@ -174,7 +174,7 @@ else if(window.screen.width < 1200)
     nextText = true;
     var vara = new Vara("#narration","https://raw.githubusercontent.com/akzhy/Vara/master/fonts/Satisfy/SatisfySL.json",[{
         text:"But for many of the poor people living in the region, the rewards were worth the risks.",
-        duration: 5000,
+        duration: 4000,
         }, 
         {
             text: "continue...",
