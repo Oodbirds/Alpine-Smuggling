@@ -7,14 +7,34 @@
     <script src="https://cdn.jsdelivr.net/npm/vara@1.4.0/lib/vara.min.js" type="text/javascript"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="./style.css">
-    <script src="./js/dataManager.js"></script>
-    <script src="animations.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 
 </head>
-<body onload='setCookieRough()'>
+<body>
  <!--<div class= "overlay" id="title">Alpine Smuggling</div>-->
     <a class="hidden" id="page2" href="./html/charactersPages.html"></a>
     <div class = "overlay" id = "narration"></div>
+    <div id = "menu" > 
+        <h3 id  = "menu-title"> Chapters </h3>
+        <ol id = "ChapterList" role = list> Chapters
+            <ol class = "listItem">
+                <a href="../intro/index.html" style: text>Beginning</a>
+            </ol>
+            <ol class = "listItem">
+                <a href="../intro/html/charactersPages.html">Chapter 1: The Smugglers</a>
+            </ol class = "listItem">
+            <ol class = "listItem">
+                <a href="../intro/html/searching.html">Chapter 2: Searching in the Dark</a>
+            </ol>
+            <ol class = "listItem">
+                <a href="../intro/html/theEnd.html">Chapter 3: The Sun Rise</a>
+            </ol>
+    </ol>
+</div>
+<script src="./js/dataManager.js"></script>
+<script src="animations.js"></script>
+
     <canvas></canvas>
 </body>
 </html>

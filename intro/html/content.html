@@ -1,17 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>Auto ToC</title>
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../style.css">
 </head>
-<body onload='checkHistory("recentPageViews")'>
-    <div id = "recentPageViews"> hello </div>
-    <div id="page">hello there</div>
-        <button class="button" id = "middle" onclick="clearHistory('recentPageViews')">restart</button>
-    <br>
-    <a href="../index.html">
-        <button class="button" id = "middle"> index</button>
-    </a>
-    <script src="../js/dataManager.js"></script>
 
+<body>
+
+    <ol class = "ChapterList" role = list> Chapters
+        <ol class = "listItem">
+            <a href="../index.html">Beginning</a>
+        </ol>
+        <ol class = "listItem">
+            <a href="../html/charactersPages.html">Chapter 1: The Smugglers</a>
+        </ol class = "listItem">
+        <ol class = "listItem">
+            <a href="../html/searching.html">Chapter 2: Searching in the Dark</a>
+        </ol>
+        <ol class = "listItem">
+            <a href="#">Chapter 3: At the Top of the Mountain</a>
+        </ol>
+    </ol>
+
+    <script src="../js/dataManager.js"></script>
 </body>
+</html>

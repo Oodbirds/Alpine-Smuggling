@@ -1,81 +1,85 @@
-var page1;
-var page2;
-var page3;
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
-    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + '=' + cvalue + ';path="/";' + expires;
-}
-function setCookieRough(){
-    var history = getCookie("history");
-    if (history != "") {
-        console.log("history exists");
-        console.log
-        console.log(document.URL);
-        var insert = true;
-        var sp = history.toString().split(",");
-        if (insert) {
-            sp.push(document.URL);
-        }
-        setCookie("history", sp.toString(), 30);
-    }else {
-        console.log("emtpy history");
-        var stack = new Array();
-        stack.push(document.URL);
-        setCookie("history", stack.toString(), 30);
-    }
+var pages = JSON.stringify(localStorage.getItem("pages"));
+var index;
+var character;
+var searching;
+var ending = false;
 
+if (pages.includes("page1")){
+    console.log("page 1 found");
+    index = true;
+}if (pages.includes("page2")){
+    console.log("page2 found");
+    character = true;
+}if (pages.includes("page3")){
+    console.log("page 3 found");
+    searching = true;
+}if (pages.includes("page4")){
+    console.log("page 4 found");
+    ending = true;
 }
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for ( var i = 0; i < ca.length; i++) {
-        var c = ca[i].trim();
-        if (c.indexOf(name) == 0)
-            return c.substring(name.length, c.length);
-    }
-    return "";
-}
-function checkHistory(targetId) {
-    var history = getCookie("history");
-    var htmlContent = '';
 
-    if (history != "") {
-        var insert = true;
-        var sp = history.toString().split(",");
-        for ( var i = sp.length - 1; i >= 0; i--) {
-            htmlContent += '<a style="color: black;" class="demo-pricing demo-pricing-1"  href="'
-                    + sp[i]
-                    + '">'
-                    + sp[i].substring(sp[i].lastIndexOf('/') + 1) + '</a><br>';
-            // if (sp[i] == document.URL) {
-            //     insert = false;
-            // }
-            document.getElementById(targetId).innerHTML = htmlContent;
+toc = document.getElementById("ToC");
+
+tocHeader = document.createElement("h2");
+tocHeader.innerText="Chapters of Our Story";
+//toc.appendChild(tocHeader);
+
+tocList = document.createElement("ul");    
+mainDiv = document.getElementById("menu");
+headers = mainDiv.getElementsByClassName("listItem");
+
+// For each h3
+for (i = 0; i < headers.length; i++){
+    var link = headers[i].getElementsByTagName("a")
+    console.log(headers[i].innerText);
+    if(headers[i].innerText == "Beginning"){
+        if(index){
+            console.log("found");
+            link[0].style.color = "black";
+        }else{
+            link[0].style.color = "#8f9691";
         }
-        if (insert) {
-            sp.push(document.URL);
-        }
-        setCookie("history", sp.toString(), 30);
-    } else {
-        var stack = new Array();
-        stack.push(document.URL);
-        setCookie("history", stack.toString(), 30);
     }
+    else if(headers[i].innerText == "Chapter 1: The Smugglers"){
+        if(character){
+            console.log("found");
+            link[0].style.color = "black";
+        }else{
+            link[0].style.color = "#8f9691";
+        }
+    }
+    else if(headers[i].innerText == "Chapter 2: Searching in the Dark"){
+        if(searching){
+            console.log("found");
+            link[0].style.color = "black";
+        }else{
+            link[0].style.color = "#8f9691";
+        }
+    }
+    else if(headers[i].innerText == "Chapter 3: The Sun Rise"){
+        if(ending){
+            console.log("found");
+            link[0].style.color = "black";
+        }else{
+            link[0].style.color = "#8f9691";
+        }
+    }
+    console.log("item " + i);
+
+    // Create an id
+    var name = "ch"+i;
+    headers[i].id= name;
+  
+    // a list item for the entry
+    tocListItem = document.createElement("li");
+
+    // a link for the h3
+    tocEntry = document.createElement("a");
+    tocEntry.title = "yoo";
+    tocEntry.href = "../index.html";
+    //tocEntry.innerText=headers[i].innerText;
+
+    //tocListItem.appendChild(tocEntry);
+    //tocList.appendChild(tocListItem);
 }
-function displaySeenPages(){
-    console.log(sp[i].substring(sp[i].lastIndexOf('/') + 1) + '</a><br>');
-    console.log()
-}
-function clearHistory(targetId) {
-    //var history = getCookie("history");
-    //history = "";
-    localStorage.history = "";
-    document.getElementById(targetId).innerHTML = "";
-    alert("Visited page links were cleared");
-}
-//console.log(document.querySelector("#recentPageViews"));
-//checkHistory("recentPageViews");
-//clearHistory("recentPageViews");
-console.log("what");
+//toc.appendChild(tocList);
