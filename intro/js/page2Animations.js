@@ -100,7 +100,7 @@ $(document).ready(function() {
 
 //preload images and features
 function preload(){
-    mountain2 = loadImage("../resources/page2/mountain2.png");
+    mountain2 = loadImage("../resources/page2/Mountain2.png");
     sky = loadImage("../resources/Sky.png");
     dark = loadImage("../resources/IMG_0881.PNG");
 }
